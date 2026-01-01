@@ -42,19 +42,25 @@ async def health_check():
     }
 
 if __name__ == "__main__":
-    # Permitir configurar porta via variável de ambiente
+    # Permitir configurar porta via variável de ambiente (Railway usa PORT)
     port = int(os.getenv("PORT", 8000))
     
-    print(f"🚀 Iniciando CryptoAnalytics Pro na porta {port}...")
-    print(f"📊 Dashboard: http://localhost:{port}")
-    print(f"📚 API Docs: http://localhost:{port}/docs")
-    print("\n💡 Pressione Ctrl+C para parar o servidor\n")
+    # Detectar se está em produção (Railway define RAILWAY_ENVIRONMENT)
+    is_production = os.getenv("RAILWAY_ENVIRONMENT") is not None or os.getenv("ENVIRONMENT") == "production"
+    
+    if is_production:
+        print(f"🚀 Iniciando CryptoAnalytics Pro em PRODUÇÃO na porta {port}...")
+    else:
+        print(f"🚀 Iniciando CryptoAnalytics Pro na porta {port}...")
+        print(f"📊 Dashboard: http://localhost:{port}")
+        print(f"📚 API Docs: http://localhost:{port}/docs")
+        print("\n💡 Pressione Ctrl+C para parar o servidor\n")
     
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
         port=port,
-        reload=True,
+        reload=not is_production,  # Desabilitar reload em produção
         log_level="info"
     )
 

@@ -215,6 +215,28 @@ python/
 
 ---
 
+## 🌐 Deploy
+
+### Railway (Recomendado)
+
+O projeto está pronto para deploy no Railway:
+
+1. Conecte seu repositório GitHub ao Railway
+2. Railway detectará automaticamente a configuração
+3. Deploy automático em minutos!
+
+📖 **Guia completo**: Veja [DEPLOY.md](DEPLOY.md) para instruções detalhadas.
+
+**Status do Deploy:**
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template)
+
+### Outras Plataformas
+
+- **Render**: Similar ao Railway
+- **Heroku**: Usar Procfile fornecido
+- **Fly.io**: Boa para aplicações Python
+- **AWS/GCP**: Para produção em escala
+
 ## 📈 Melhorias Futuras
 
 - [ ] Autenticação e autorização (JWT)
@@ -223,7 +245,7 @@ python/
 - [ ] Mais modelos de ML (LSTM, Prophet)
 - [ ] Alertas personalizados
 - [ ] Backtesting de estratégias
-- [ ] Deploy em cloud (AWS/GCP)
+- [x] Deploy em cloud (Railway) ✅
 
 ---
 
