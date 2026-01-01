@@ -6,6 +6,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)
 ![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![GitHub](https://img.shields.io/github/stars/ronaldoarch/cryptoanalytics-pro?style=social)
 
 **Sistema profissional de análise de mercado de criptomoedas com predições usando Machine Learning**
 
